@@ -4,24 +4,32 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^3.9.2",
+    "apollo-boost": "^0.3.1",
+    "graphql": "^14.1.1",
     "react": "^16.8.4",
+    "react-apollo": "^2.5.2",
     "react-dom": "^16.8.4",
+    "react-router-dom": "^5.0.0",
     "react-scripts-ts": "3.1.0"
   },
   "scripts": {
-    "build-css": "node-sass-chokidar src/ -o src/",
-    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
-    "start": "react-scripts-ts start && npm run watch-css",
+    "start": "react-scripts-ts start",
     "build": "react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom",
-    "eject": "react-scripts-ts eject"
+    "eject": "react-scripts-ts eject",
+    "introspect": "npx apollo-codegen introspect-schema http://localhost:3333/graphql --output schema.json",
+    "generate": "npx apollo-codegen generate src/GraphQL/*.ts --schema ./schema.json --target typescript --output src/GraphQL/types",
+    "typegen": "npm run introspect && npm run generate"
   },
   "devDependencies": {
+    "@types/graphql": "^14.0.7",
     "@types/jest": "^24.0.11",
     "@types/material-ui": "^0.21.6",
     "@types/node": "^11.11.4",
     "@types/react": "^16.8.8",
     "@types/react-dom": "^16.8.3",
+    "@types/react-router-dom": "^4.3.1",
+    "apollo-codegen": "^0.20.2",
     "typescript": "^3.3.4000"
   }
 }

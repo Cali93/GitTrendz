@@ -2,6 +2,8 @@
   "rules": {
     "no-console": false,
     "ordered-imports": false,
+    "space-before-function-paren": true,
+    "object-literal-sort-keys": false,
     "interface-name": false,
     "no-submodule-imports": false,
     "jsx-no-lambda": false
@@ -11,7 +13,8 @@
     "exclude": [
       "config/**/*.js",
       "node_modules/**/*.ts",
-      "coverage/lcov-report/*.js"
+      "coverage/lcov-report/*.js",
+      "src/registerServiceWorker.ts"
     ]
   }
 }
