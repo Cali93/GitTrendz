@@ -1,19 +1,17 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { ApolloClient } from 'apollo-client';
-import { ApolloProvider } from 'react-apollo';
-import { HttpLink } from 'apollo-link-http';
-import { InMemoryCache } from 'apollo-cache-inmemory';
+import ApolloClient from 'apollo-boost';
+import {ApolloProvider} from 'react-apollo';
 
-import './index.css';
-import App from './App';
+import App from './App/App';
 import registerServiceWorker from './registerServiceWorker';
+import './index.css';
 
-const client = new ApolloClient ({
-  link: new HttpLink({
-      uri: "http://localhost:3333/graphql",
-  }),
-  cache: new InMemoryCache()
+const client = new ApolloClient({
+  uri: "https://api.github.com/graphql",
+  headers: {
+    Authorization: "Bearer 2997ba72d7a08104912b6a3ef8cebe64f3620f82"
+  }
 });
 
 ReactDOM.render(

@@ -4,8 +4,11 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^3.9.2",
+    "@material-ui/icons": "^3.0.2",
     "apollo-boost": "^0.3.1",
+    "apollo-link-state": "^0.4.2",
     "graphql": "^14.1.1",
+    "moment": "^2.24.0",
     "react": "^16.8.4",
     "react-apollo": "^2.5.2",
     "react-dom": "^16.8.4",
@@ -16,10 +19,7 @@
     "start": "react-scripts-ts start",
     "build": "react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom",
-    "eject": "react-scripts-ts eject",
-    "introspect": "npx apollo-codegen introspect-schema http://localhost:3333/graphql --output schema.json",
-    "generate": "npx apollo-codegen generate src/GraphQL/*.ts --schema ./schema.json --target typescript --output src/GraphQL/types",
-    "typegen": "npm run introspect && npm run generate"
+    "eject": "react-scripts-ts eject"
   },
   "devDependencies": {
     "@types/graphql": "^14.0.7",
@@ -29,7 +29,6 @@
     "@types/react": "^16.8.8",
     "@types/react-dom": "^16.8.3",
     "@types/react-router-dom": "^4.3.1",
-    "apollo-codegen": "^0.20.2",
     "typescript": "^3.3.4000"
   }
 }
