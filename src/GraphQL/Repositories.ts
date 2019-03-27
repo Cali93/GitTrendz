@@ -12,6 +12,7 @@ export const trendingRepositoriesGQLQuery = gql`
       edges {
         node {
           ... on Repository {
+            id
             name
             owner {
               login
