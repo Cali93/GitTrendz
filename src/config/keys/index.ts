@@ -1,0 +1,1 @@
+export const GitHubAccessToken = '<your github token here>';

@@ -4,12 +4,12 @@ import {
   Toolbar,
   WithStyles,
   withStyles,
-  Hidden,
-  Button
+  Hidden
 } from '@material-ui/core';
 import { FolderOpenRounded, CreateNewFolderRounded } from '@material-ui/icons';
 
 import { BrandLogo } from '../../../components/common/BrandLogo';
+import { ButtonLink } from '../../../components/common/ButtonLink';
 import Drawer from '../Drawer/Drawer';
 import { MobileMenuItem } from './MobileMenuItem';
 import { styles } from './navbarStyles';
@@ -40,17 +40,14 @@ class Navbar extends React.Component<INavProps, INavState> {
             <BrandLogo />
             <MobileMenuItem toggleDrawer={this.toggleDrawer}/>
             <Hidden smDown>
-              {/* <Typography variant="h5" color="inherit" className={classes.appTitle}>
-                OPEN DATA VISUALIZATION
-              </Typography> */}
-              <Button variant='outlined' color='inherit' className={classes.navButton}>
+              <ButtonLink to='/' variant='outlined' color='inherit' className={classes.navButton}>
                 <FolderOpenRounded className={classes.navBtnIcon} />
                 Repositories
-              </Button>
-              <Button variant='outlined' color='inherit' className={classes.navButton}>
+              </ButtonLink>
+              <ButtonLink to='/add' variant='outlined' color='inherit' className={classes.navButton}>
                 <CreateNewFolderRounded className={classes.navBtnIcon} />
                 Add repository
-              </Button>
+              </ButtonLink>
             </Hidden>    
           </Toolbar>
         </AppBar>

@@ -1,8 +1,9 @@
 import * as React from 'react';
 import {SwipeableDrawer, IconButton, Grid, withStyles} from '@material-ui/core';
 import {ArrowBackRounded} from '@material-ui/icons';
+
+import { BrandLogo } from '../../../components/common/BrandLogo';
 import DrawerItems from './DrawerItems';
-import { BrandLogo } from 'src/components/common/BrandLogo';
 
 const styles = {
   paper: {

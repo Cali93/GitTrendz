@@ -1,5 +1,4 @@
 import * as React from 'react';
-import cn from 'classnames';
 import {
   List,
   ListItem,
@@ -8,10 +7,11 @@ import {
   WithStyles,
   withStyles
 } from '@material-ui/core';
-import {getLanguageIconName} from '../../helpers/getLanguageIconName';
-import {styles} from './repositoriesStyles';
 import {StarOutlined} from '@material-ui/icons';
+
+import { Language } from '../common/Language';
 import RepositoryQuery from './Repository/RepositoryQuery';
+import {styles} from './repositoriesStyles';
 
 interface IRepositoriesProps extends WithStyles < typeof styles > {
   scroller?: any;
@@ -52,18 +52,10 @@ class Repositories extends React.Component<IRepositoriesProps,IRepositoriesState
   };
 
   public renderLanguage = language => {
-    const languageIconName = getLanguageIconName(language);
-    const {classes} = this.props;
-    const iconClassnames = cn('colored', `devicon-${languageIconName}-plain`);
-
+    const { classes } = this.props;
     return (
-      <div className={classes.languages}>
-        <div className={classes.languagesIcons}>
-          <i className={iconClassnames}/>
-        </div>
-        <Typography variant='subtitle2' align='center' className={classes.infoText}>
-          {language}
-        </Typography>
+      <div className={classes.languageContainer}>
+        <Language language={language} />
       </div>
     );
   };
@@ -110,10 +102,8 @@ class Repositories extends React.Component<IRepositoriesProps,IRepositoriesState
         <div
           ref={this.scroller}
           onScroll={this.handleScroll}
-          style={{
-          height: 'calc(100vh - 64px)',
-          overflowY: 'scroll'
-        }}>
+          className={classes.scroller}
+        >
           <List>
             <Grid container justify='center'>
               <Grid item xs={10} sm={8}>
@@ -128,7 +118,7 @@ class Repositories extends React.Component<IRepositoriesProps,IRepositoriesState
                       <div 
                         className={classes.cardItem}
                         onClick={e => this.handleOpenRepo(node.name, node.owner.login)}>
-                        <ListItem >
+                        <ListItem>
                           <Grid container alignItems='center'>
                             <Grid item xs={2}>
                               {node.primaryLanguage && this.renderLanguage(node.primaryLanguage.name)}

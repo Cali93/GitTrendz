@@ -1,6 +1,10 @@
 import { createStyles, Theme } from '@material-ui/core';
 
 export const styles = (theme: Theme) => createStyles({
+  scroller: {
+    height: 'calc(100vh - 64px)',
+    overflowY: 'scroll'
+  },
   cardItem: {
     height: 'auto',
     margin: '40px 0px',
@@ -12,7 +16,7 @@ export const styles = (theme: Theme) => createStyles({
       cursor: 'pointer'
     }
   },
-  languages: {
+  languageContainer: {
     position: 'relative',
     display: 'flex',
     flexDirection: 'column',
@@ -21,17 +25,6 @@ export const styles = (theme: Theme) => createStyles({
     left: '10px',
     top: '-35px',
     marginRight: '10px'
-  },
-  languagesIcons: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: '50px',
-    width: '50px',
-    borderRadius: '6px',
-    background: 'linear-gradient(#ECEFF1, #FFFFFF)',
-    boxShadow:'0 0 2px 0 rgba(33, 33, 33, 0.33)',
-    fontSize: '40px'
   },
   repoName: {
     overflow: 'hidden',
@@ -49,7 +42,6 @@ export const styles = (theme: Theme) => createStyles({
     height: 'auto',
     right: '10px',
     top: '42px',
-    // border: 'solid 1px #212121'
   },
   starIcons: {
     display: 'flex',
@@ -64,6 +56,6 @@ export const styles = (theme: Theme) => createStyles({
   },
   infoText: {
     zIndex: 100,
-    fontWeight: 700
+    fontWeight: 600
   }
 });

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { withRouter, RouteComponentProps } from 'react-router-dom';
 import { List, ListItem, ListItemIcon, ListItemText, Divider } from '@material-ui/core';
 import { WithStyles, withStyles, createStyles, Theme } from '@material-ui/core';
 import { CreateNewFolderRounded, FolderOpenRounded } from '@material-ui/icons';
@@ -15,22 +16,26 @@ export const styles = (theme: Theme) => createStyles({
   }
 });
 
-interface IDrawerItemsProps extends WithStyles<typeof styles> { }
+interface IDrawerItemsProps extends WithStyles<typeof styles> {
+  history?: any;
+}
 
-class DrawerItems extends React.Component<IDrawerItemsProps> {
+type DrawerProps = IDrawerItemsProps & RouteComponentProps<{}> 
+
+class DrawerItems extends React.Component<DrawerProps> {
   public render () {
     const { classes: { divider, list, primary } } = this.props;
     return (
       <div className={list}>
       <List>
-      <ListItem >
+      <ListItem onClick={e => this.props.history.push('/')}>
         <ListItemIcon>
           <FolderOpenRounded color='secondary'/>
         </ListItemIcon>
         <ListItemText primary='REPOSITORIES' classes={{primary}}/>
       </ListItem>
       <Divider className={divider}/>
-      <ListItem >
+      <ListItem onClick={e => this.props.history.push('/add')}>
         <ListItemIcon>
           <CreateNewFolderRounded color='secondary'/>
         </ListItemIcon>
@@ -42,4 +47,4 @@ class DrawerItems extends React.Component<IDrawerItemsProps> {
   }
 }
 
-export default withStyles(styles)(DrawerItems)
+export default withStyles(styles)(withRouter(DrawerItems));

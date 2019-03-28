@@ -7,9 +7,6 @@ export const getRepositoryGQLQuery = gql`
       url
       description
       forkCount
-      commitComments {
-        totalCount
-      }
       owner {
         login
       }

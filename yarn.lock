@@ -78,6 +78,14 @@
     prop-types "^15.6.0"
     react-is "^16.6.3"
 
+"@onecloudinc/material-ui-chip-input@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@onecloudinc/material-ui-chip-input/-/material-ui-chip-input-1.0.0.tgz#508d205acaa1de05646dca80b4c1184d1db72137"
+  integrity sha512-9ZfeJiJWqhDyuSfS4rtPOC3dEh/CLStm1TyuadCuVSlk2o5I+j3AULNt5mo4DGK8NW4JhHD4aqPNgQXhbkZqFA==
+  dependencies:
+    classnames "^2.2.5"
+    prop-types "^15.6.1"
+
 "@types/graphql@^14.0.7":
   version "14.0.7"
   resolved "https://registry.yarnpkg.com/@types/graphql/-/graphql-14.0.7.tgz#daa09397220a68ce1cbb3f76a315ff3cd92312f6"
@@ -5961,7 +5969,7 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@^15.6.0, prop-types@^15.6.2:
+prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   dependencies:

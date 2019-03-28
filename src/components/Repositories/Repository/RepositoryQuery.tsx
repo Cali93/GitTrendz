@@ -26,7 +26,7 @@ class RepositoryQuery extends React.Component<IRepositoryQueryProps> {
             return (
               <Repository
                 repo={data.repository}
-                open={open}
+                isModalOpen={open}
                 handleCloseRepo={handleCloseRepo}/>
             );
           }

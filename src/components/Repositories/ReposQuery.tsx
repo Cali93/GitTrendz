@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Query } from 'react-apollo';
 import * as moment from 'moment';
+
 import Repositories from './Repositories';
 import { trendingRepositoriesGQLQuery } from '../../GraphQL/Repositories';
 
